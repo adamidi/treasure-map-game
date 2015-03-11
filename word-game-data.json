@@ -1,0 +1,10 @@
+{
+    "cat":{
+        "url": "img/word-game/cat.jpg",
+        "answer": "cat"
+    },
+    "dog":{
+        "url": "img/word-game/dog.png",
+        "answer": "dog"
+    }
+}

@@ -1,0 +1,18 @@
+
+<div class="modal-dialog addition-game">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="$parent.currentGame=null" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Find the sum!</h4>
+        </div>
+        <div class="modal-body">
+
+            <span>{{a}} + {{b}} = </span>
+            <input type="text" ng-model="userInput" placeholder=" ?? ">
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn" ng-click="unlockPath()">That's my answer!</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
