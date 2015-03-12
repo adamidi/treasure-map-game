@@ -7,7 +7,12 @@
     app.directive('additionGame',function(){
         return{
             restrict:'E',
-            templateUrl:'templates/addition-game.html'
+            templateUrl:'templates/addition-game.html',
+            link: function(s,e,a) {
+            },
+            controller: function($scope) {
+                $scope.hello = "hello world";
+            }
         }
     });
 

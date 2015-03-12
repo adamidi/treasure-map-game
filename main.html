@@ -61,10 +61,10 @@
             <button id="btn-3" class="map-tile btn word-game" ng-disabled="disabled[3]" ng-click="currentGame = 3"></button>
 
             <div class="game-tile" id="0" ng-controller="additionCtrl" firstnumber="1" secondnumber="2"  ng-show="currentGame==0">
-                <addition-game></addition-game>
+                <addition-game genre="action" limit="10"></addition-game>
             </div><!-- /.modal -->
 
-            <div class="game-tile" id="1" ng-controller="wordCtrl" word="cat" ng-show="currentGame==1">
+            <div class="game-tile" id="1" ng-controller="wordCtrl"  ng-show="currentGame==1">
                 <word-game></word-game>
             </div><!-- /.modal -->
 
@@ -72,7 +72,7 @@
                 <addition-game></addition-game>
             </div><!-- /.modal -->
 
-            <div class="game-tile" id="3" ng-controller="wordCtrl" word="dog" ng-show="currentGame==3">
+            <div class="game-tile" id="3" ng-controller="wordCtrl"  ng-show="currentGame==3">
                 <word-game></word-game>
             </div><!-- /.modal -->
 

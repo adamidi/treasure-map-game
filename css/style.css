@@ -30,7 +30,7 @@ body {
     background-color: lightcoral;
 }
 
-.addition-game span{
+.addition-game span, .word-game span{
     font-size:40px;
 }
 

@@ -6,5 +6,21 @@
     "dog":{
         "url": "img/word-game/dog.png",
         "answer": "dog"
+    },
+    "mouse":{
+        "url": "img/word-game/mouse.jpg",
+        "answer": "mouse"
+    },
+    "horse":{
+        "url": "img/word-game/horse.jpg",
+        "answer": "horse"
+    },
+    "bird":{
+        "url": "img/word-game/bird.jpg",
+        "answer": "bird"
+    },
+    "lion":{
+        "url": "img/word-game/lion.jpg",
+        "answer": "lion"
     }
 }
