@@ -1,0 +1,41 @@
+
+<div class="modal-dialog word-game">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="$parent.currentGame=null" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Paint the flag!</h4>
+        </div>
+        <div class="modal-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="flag" ng-show="country=='netherlands'" style="width: 400px; height: 240px">
+                            <h3>NETHERLANDS</h3>
+                            <div class="flag-part netherlands" part-id="0" ng-click="setColor($event,'red')" ></div>
+                            <div class="flag-part netherlands" part-id="1" ng-click="setColor($event,'white')"></div>
+                            <div class="flag-part netherlands" part-id="2" ng-click="setColor($event,'blue')" ></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn color-btn red" ng-click="currentColor='red'"></button>
+                        <button class="btn color-btn white" ng-click="currentColor='white'"></button>
+                        <button class="btn color-btn blue" ng-click="currentColor='blue'"></button>
+                        <button class="btn color-btn green" ng-click="currentColor='green'"></button>
+                        <button class="btn color-btn yellow" ng-click="currentColor='yellow'"></button>
+                        <button class="btn color-btn eraser" ng-click="currentColor=''"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn" ng-click="unlockPath()">That's my answer!</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+
+        <style>
+            .flag-part {
+               border: 1px solid grey;
+               height: 80px;
+            }
+        </style>

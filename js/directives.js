@@ -23,5 +23,28 @@
         }
     });
 
+    app.directive('flagGame',function(){
+        return{
+            restrict:'E',
+            templateUrl:'templates/flag-game.html'
+        }
+    });
+
+
+
+
+
 
 })();
+
+//(function(){
+//    var app = angular.module('flagDirectives',[]);
+//
+//    app.directive('flagNetherlands',function(){
+//        return{
+//            restrict:'E',
+//            templateUrl:'templates/flags/flag-netherlands.html'
+//        }
+//    });
+//
+//})();

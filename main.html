@@ -20,7 +20,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Start Bootstrap</a>
+            <a class="navbar-brand" href="#">The Treasure Map</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -29,10 +29,7 @@
                     <a href="#">About</a>
                 </li>
                 <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
+                    <a class="btn" onclick="location.reload()">Play Again!</a>
                 </li>
             </ul>
         </div>
@@ -54,27 +51,64 @@
     <div class="row">
         <div class="col-md-12">
 
+            <!--<span ng-repeat="id in gameIds">-->
+                <!--<button id="btn-{{id}}" class="map-tile btn highlight-button" ng-disabled="disabled[{{id}}]" ng-click="currentGame={{id}}"></button>-->
+            <!--</span>-->
 
-            <button id="btn-0" class="map-tile btn addition-game highlight-button" ng-disabled="disabled[0]" ng-click="currentGame = 0"></button>
-            <button id="btn-1" class="map-tile btn word-game" ng-disabled="disabled[1]" ng-click="currentGame = 1"></button>
-            <button id="btn-2" class="map-tile btn addition-game" ng-disabled="disabled[2]" ng-click="currentGame = 2"></button>
-            <button id="btn-3" class="map-tile btn word-game" ng-disabled="disabled[3]" ng-click="currentGame = 3"></button>
+            <button id="btn-0" class="map-tile btn highlight-button" ng-disabled="disabled[0]" ng-click="currentGame = 0"></button>
+            <button id="btn-1" class="map-tile btn" ng-disabled="disabled[1]" ng-click="currentGame = 1"></button>
+            <button id="btn-2" class="map-tile btn " ng-disabled="disabled[2]" ng-click="currentGame = 2"></button>
+            <button id="btn-3" class="map-tile btn " ng-disabled="disabled[3]" ng-click="currentGame = 3"></button>
+            <button id="btn-4" class="map-tile btn " ng-disabled="disabled[4]" ng-click="currentGame = 4"></button>
+            <button id="btn-5" class="map-tile btn " ng-disabled="disabled[5]" ng-click="currentGame = 5"></button>
+            <button id="btn-6" class="map-tile btn " ng-disabled="disabled[6]" ng-click="currentGame = 6"></button>
+            <button id="btn-7" class="map-tile btn " ng-disabled="disabled[7]" ng-click="currentGame = 7"></button>
+            <button id="btn-8" class="map-tile btn " ng-disabled="disabled[8]" ng-click="currentGame = 8"></button>
+            <button id="btn-9" class="map-tile btn " ng-disabled="disabled[9]" ng-click="currentGame = 9"></button>
 
-            <div class="game-tile" id="0" ng-controller="additionCtrl" firstnumber="1" secondnumber="2"  ng-show="currentGame==0">
-                <addition-game genre="action" limit="10"></addition-game>
+            <div class="game-tile" id="0" ng-controller="flagCtrl" flag="netherlands"  ng-show="currentGame==0">
+                <flag-game></flag-game>
             </div><!-- /.modal -->
+
+            <!--<div class="game-tile" id="0" ng-controller="additionCtrl"  ng-show="currentGame==0">-->
+                <!--<addition-game></addition-game>-->
+            <!--</div>&lt;!&ndash; /.modal &ndash;&gt;-->
 
             <div class="game-tile" id="1" ng-controller="wordCtrl"  ng-show="currentGame==1">
                 <word-game></word-game>
             </div><!-- /.modal -->
 
-            <div class="game-tile" id="2" ng-controller="additionCtrl"  ng-show="currentGame==2">
+            <div class="game-tile" id="2" ng-controller="additionCtrl" firstnumber="1" secondnumber="2" ng-show="currentGame==2">
                 <addition-game></addition-game>
             </div><!-- /.modal -->
 
             <div class="game-tile" id="3" ng-controller="wordCtrl"  ng-show="currentGame==3">
                 <word-game></word-game>
             </div><!-- /.modal -->
+            <div class="game-tile" id="4" ng-controller="wordCtrl"  ng-show="currentGame==4">
+                <word-game></word-game>
+            </div><!-- /.modal -->
+
+            <div class="game-tile" id="5" ng-controller="wordCtrl"  ng-show="currentGame==5">
+                <word-game></word-game>
+            </div><!-- /.modal -->
+
+            <div class="game-tile" id="6" ng-controller="wordCtrl"  ng-show="currentGame==6">
+                <word-game></word-game>
+            </div><!-- /.modal -->
+
+            <div class="game-tile" id="7" ng-controller="wordCtrl"  ng-show="currentGame==7">
+                <word-game></word-game>
+            </div><!-- /.modal -->
+
+            <div class="game-tile" id="8" ng-controller="additionCtrl"  ng-show="currentGame==8">
+                <addition-game></addition-game>
+            </div><!-- /.modal -->
+
+            <div class="game-tile" id="9" ng-controller="additionCtrl"  ng-show="currentGame==9">
+                <addition-game></addition-game>
+            </div><!-- /.modal -->
+
 
             <!--<button id="btn-0" class="map-tile btn addition-game highlight-button" data-toggle="modal" data-target="#0" ng-disabled="disabled[0]"></button>-->
             <!--<button id="btn-1" class="map-tile btn word-game" data-toggle="modal" data-target="#1"  ng-disabled="disabled[1]"></button>-->

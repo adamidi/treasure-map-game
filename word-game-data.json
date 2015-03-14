@@ -22,5 +22,13 @@
     "lion":{
         "url": "img/word-game/lion.jpg",
         "answer": "lion"
+    },
+    "snake":{
+        "url": "img/word-game/snake.jpg",
+        "answer": "snake"
+    },
+    "turtle":{
+        "url": "img/word-game/turtle.jpg",
+        "answer": "turtle"
     }
 }
