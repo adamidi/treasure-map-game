@@ -1,0 +1,23 @@
+{
+    "name": "treasure-map",
+    "version": "0.1.0",
+    "description": "The Treasure Map Game",
+    "main": "main.html",
+    "keywords": [
+        "game"
+    ],
+    "license": "MIT",
+    "private": true,
+    "dependencies": {
+        "angular": "^1.3.0",
+        "bootstrap-css-only": "^3.3.0",
+        "angular-animate": "^1.3.0"
+    },
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ]
+}

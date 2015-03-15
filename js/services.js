@@ -52,15 +52,15 @@
         };
 
         var getWordGameData = function () {
-            return wordGameData
+            return wordGameData;
         };
 
         var getWordGameKeys = function () {
-            return randomWordGameKeys
+            return randomWordGameKeys;
         };
 
         var getFlagGameData = function () {
-            return flagGameData
+            return flagGameData;
         };
 
         var assignWordGameKey = function () {
