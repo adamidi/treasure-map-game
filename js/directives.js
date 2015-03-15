@@ -1,50 +1,24 @@
-/**
- * Created by efi on 9/3/2015.
- */
-(function(){
-    var app = angular.module('gameDirectives',[]);
+(function () {
+    var app = angular.module('gameDirectives', []);
 
-    app.directive('additionGame',function(){
-        return{
-            restrict:'E',
-            templateUrl:'templates/addition-game.html',
-            link: function(s,e,a) {
-            },
-            controller: function($scope) {
-                $scope.hello = "hello world";
-            }
+    app.directive('additionGame', function () {
+        return {
+            restrict: 'E',
+            templateUrl: 'templates/addition-game.html'
         }
     });
 
-    app.directive('wordGame',function(){
-        return{
-            restrict:'E',
-            templateUrl:'templates/word-game.html'
+    app.directive('wordGame', function () {
+        return {
+            restrict: 'E',
+            templateUrl: 'templates/word-game.html'
         }
     });
 
-    app.directive('flagGame',function(){
-        return{
-            restrict:'E',
-            templateUrl:'templates/flag-game.html'
+    app.directive('flagGame', function () {
+        return {
+            restrict: 'E',
+            templateUrl: 'templates/flag-game.html'
         }
     });
-
-
-
-
-
-
 })();
-
-//(function(){
-//    var app = angular.module('flagDirectives',[]);
-//
-//    app.directive('flagNetherlands',function(){
-//        return{
-//            restrict:'E',
-//            templateUrl:'templates/flags/flag-netherlands.html'
-//        }
-//    });
-//
-//})();

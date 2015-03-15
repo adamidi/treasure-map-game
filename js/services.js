@@ -1,40 +1,39 @@
-/**
- * Created by efi on 10/3/2015.
- */
-(function(){
-    var app = angular.module('gameServices',[]);
+(function () {
+    var app = angular.module('gameServices', []);
 
-    app.service('Path',function(){
-        this.unlock = function($scope){
-            var func= $scope.checkAnswer,
-                gameId= $scope.gameId,
-                nextGameId= $scope.nextGameId,
-                btn= $scope.buttonElem,
-                nextBtn = $scope.nextButtonElem,
-                disabled=$scope.$parent.disabled;
+    app.service('Path', function () {
+        this.unlock = function ($scope) {
+            var func = $scope.checkAnswer,
+                numTiles = $scope.$parent.mapTiles.length;
 
-            if(func()){
-                if(gameId==disabled.length-1){
-                    btn.classList.remove('highlight-button');
+            if (func()) {
+                if ($scope.$parent.progressPointer == numTiles - 1) {
+                    $scope.$parent.currentGame = null;
+
                     alert("Congratulations !");
                 } else {
-                    disabled[nextGameId]=false;
-                    nextBtn.classList.add('highlight-button');
-                    btn.classList.remove('highlight-button');
+                    $scope.$parent.progressPointer = $scope.$parent.currentGame + 1;
+                    $scope.$parent.currentGame = null;
                 }
             }
         };
     });
 
-    app.factory('Data',['$http',function($http){
-        var wordGameData, randomWordGameKeys ;
-        $http.get('word-game-data.json').success(function(data){
+    app.factory('Data', ['$http', function ($http) {
+        var wordGameData, randomWordGameKeys, flagGameData;
+        var wordGameKey = 0;
+
+        $http.get('word-game-data.json').success(function (data) {
             wordGameData = data;
             randomWordGameKeys = shuffle(Object.keys(data));
         });
 
-        var shuffle = function(array){
-            var currentIndex = array.length, temporaryValue, randomIndex ;
+        $http.get('flag-game-data.json').success(function (data) {
+            flagGameData = data;
+        });
+
+        var shuffle = function (array) {
+            var currentIndex = array.length, temporaryValue, randomIndex;
 
             // While there remain elements to shuffle...
             while (0 !== currentIndex) {
@@ -52,17 +51,27 @@
             return array;
         };
 
-        var getWordGameData = function(){
+        var getWordGameData = function () {
             return wordGameData
         };
 
-        var getWordGameKeys = function(){
+        var getWordGameKeys = function () {
             return randomWordGameKeys
         };
 
+        var getFlagGameData = function () {
+            return flagGameData
+        };
+
+        var assignWordGameKey = function () {
+            return wordGameKey++;
+        };
+
         return {
-            getWordGameData:getWordGameData,
-            getWordGameKeys:getWordGameKeys
+            getWordGameData: getWordGameData,
+            getWordGameKeys: getWordGameKeys,
+            getFlagGameData: getFlagGameData,
+            assignWordGameKey: assignWordGameKey
         };
 
     }]);

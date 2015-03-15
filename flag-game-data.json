@@ -1,0 +1,10 @@
+{
+    "netherlands":{
+        "type": "3strips",
+        "rightAnswer" : ["red","white","blue"]
+    },
+    "greece" :{
+        "type":"greece",
+        "rightAnswer": []
+    }
+}
