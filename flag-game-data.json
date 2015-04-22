@@ -5,6 +5,6 @@
     },
     "greece" :{
         "type":"greece",
-        "rightAnswer": []
+        "rightAnswer": ["white","blue","blue","blue","blue","blue","white","blue","white","blue","white","blue","white","blue"]
     }
 }

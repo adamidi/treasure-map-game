@@ -4,6 +4,9 @@ app.controller('mainCtrl', ['$scope', function ($scope) {
     $scope.mapTiles = document.getElementsByClassName('map-tile');
     $scope.currentGame = null;
     $scope.progressPointer = 0;
+    $scope.success = false;
+    $scope.mistake = false;
+    $scope.reachTreasure = false;
 }]);
 
 app.controller('additionCtrl', ['$scope', '$attrs', 'Path', function ($scope, $attrs, Path) {

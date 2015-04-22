@@ -1,23 +1,38 @@
 (function () {
     var app = angular.module('gameServices', []);
 
-    app.service('Path', function () {
+    app.service('Path',['$timeout', function ($timeout) {
+        //check conditions to unlock next tile of the path
         this.unlock = function ($scope) {
             var func = $scope.checkAnswer,
                 numTiles = $scope.$parent.mapTiles.length;
 
             if (func()) {
+                //successful answer
                 if ($scope.$parent.progressPointer == numTiles - 1) {
-                    $scope.$parent.currentGame = null;
-
-                    alert("Congratulations !");
+                    //at the last tile
+                    $scope.$parent.currentGame = null; //close mini-game modal
+                    $scope.$parent.reachTreasure = true; // show final animation
                 } else {
-                    $scope.$parent.progressPointer = $scope.$parent.currentGame + 1;
-                    $scope.$parent.currentGame = null;
+                    //NOT at the last tile
+                    $scope.$parent.progressPointer = $scope.$parent.currentGame + 1; //point to next game
+                    $scope.$parent.success = true; //show "success" animation
+
+                    //after 500ms, close mini-game modal and "success" animation
+                    $timeout(function(){
+                        $scope.$parent.success = false;
+                        $scope.$parent.currentGame = null;
+                    }, 500);
                 }
+            } else {
+                $scope.$parent.mistake = true; //show "mistake" animation
+                //after 500ms, close "mistake" animation
+                $timeout(function(){
+                    $scope.$parent.mistake = false;
+                }, 500);
             }
         };
-    });
+    }]);
 
     app.factory('Data', ['$http', function ($http) {
         var wordGameData, randomWordGameKeys, flagGameData;
