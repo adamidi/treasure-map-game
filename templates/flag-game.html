@@ -1,0 +1,54 @@
+
+<div class="word-game">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="$parent.currentGame=null" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Paint the flag!</h4>
+        </div>
+        <div class="modal-body">
+            <div class="">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="flag three-horizontal-strips" ng-show="flagType =='3strips'">
+                        <h3>NETHERLANDS</h3>
+                        <div class="flag-part" ng-click="userInput[0] = currentColor" ng-class="userInput[0]"></div>
+                        <div class="flag-part" ng-click="userInput[1] = currentColor" ng-class="userInput[1]"></div>
+                        <div class="flag-part" ng-click="userInput[2] = currentColor" ng-class="userInput[2]"></div>
+                    </div>
+                        <div class="flag greece" ng-show="flagType =='greece'">
+                            <h3>GREECE</h3>
+                            <div style="position:relative">
+                                <div class="flag-part" style="width: 130px; height:130px;" ng-click="userInput[0] = currentColor" ng-class="userInput[0]"></div>
+                                <div class="flag-part" style="width: 52px; height:52px; position: absolute; top:0px; z-index: 2;" ng-click="userInput[1] = currentColor" ng-class="userInput[1]"></div>
+                                <div class="flag-part" style="width: 52px; height:52px; position: absolute; top:0px; left:78px; z-index: 2;" ng-click="userInput[2] = currentColor" ng-class="userInput[2]"></div>
+                                <div class="flag-part" style="width: 52px; height:52px; position: absolute; top:78px; z-index: 2;" ng-click="userInput[3] = currentColor" ng-class="userInput[3]"></div>
+                                <div class="flag-part" style="width: 52px; height:52px; position: absolute; left:78px; top:78px; z-index: 2;" ng-click="userInput[4] = currentColor" ng-class="userInput[4]"></div>
+                                <div class="flag-part" style="width: 270px; height:26px; position: absolute; left:130px; top:0px;" ng-click="userInput[5] = currentColor" ng-class="userInput[5]"></div>
+                                <div class="flag-part" style="width: 270px; height:26px; position: absolute; left:130px; top:26px;" ng-click="userInput[6] = currentColor" ng-class="userInput[6]"></div>
+                                <div class="flag-part" style="width: 270px; height:26px; position: absolute; left:130px; top:52px;" ng-click="userInput[7] = currentColor" ng-class="userInput[7]"></div>
+                                <div class="flag-part" style="width: 270px; height:26px; position: absolute; left:130px; top:78px;" ng-click="userInput[8] = currentColor" ng-class="userInput[8]"></div>
+                                <div class="flag-part" style="width: 270px; height:26px; position: absolute; left:130px; top:104px;" ng-click="userInput[9] = currentColor" ng-class="userInput[9]"></div>
+                                <div class="flag-part" style="width: 400px; height:26px;" ng-click="userInput[10] = currentColor" ng-class="userInput[10]"></div>
+                                <div class="flag-part" style="width: 400px; height:26px;" ng-click="userInput[11] = currentColor" ng-class="userInput[11]"></div>
+                                <div class="flag-part" style="width: 400px; height:26px;" ng-click="userInput[12] = currentColor" ng-class="userInput[12]"></div>
+                                <div class="flag-part" style="width: 400px; height:26px;" ng-click="userInput[13] = currentColor" ng-class="userInput[13]"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn color-btn red" ng-click="currentColor='red'"></button>
+                        <button class="btn color-btn white" ng-click="currentColor='white'"></button>
+                        <button class="btn color-btn blue" ng-click="currentColor='blue'"></button>
+                        <button class="btn color-btn green" ng-click="currentColor='green'"></button>
+                        <button class="btn color-btn yellow" ng-click="currentColor='yellow'"></button>
+                        <button class="btn color-btn eraser" ng-click="currentColor=''"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn" ng-click="unlockPath()">That's my answer!</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->

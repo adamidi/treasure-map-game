@@ -1,0 +1,23 @@
+
+<div class="word-game">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="$parent.currentGame=null" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Find the word!</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <img class="img-responsive" src="{{url}}">
+                </div>
+                <div class="col-md-12">
+                    <input type="text" ng-model="userInput" class="form-control">
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn" ng-click="unlockPath()">That's my answer!</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->

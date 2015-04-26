@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html class="full">
+<head>
+    <title></title>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="bower_components/bootstrap-css-only/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" >
+</head>
+<body ng-app="TreasureGameApp" ng-controller="mainCtrl">
+
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">The Treasure Map</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="https://github.com/adamidi/treasure-map-game">About</a>
+                </li>
+                <li>
+                    <a class="btn" onclick="location.reload()">Play Again!</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 col-sm-10 sign">
+            <h1>The Treasure Map!</h1>
+            <p> Are you good enough to reach the treasure ?</p>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <button class="map-tile btn " ng-disabled="progressPointer != 0" ng-class="{'highlight-button': progressPointer == 0,'completed-game': progressPointer > 0 }" ng-click="currentGame = 0"></button>
+            <button class="map-tile btn " ng-disabled="progressPointer != 1" ng-class="{'highlight-button': progressPointer == 1,'completed-game': progressPointer > 1 }" ng-click="currentGame = 1"></button>
+            <button class="map-tile btn " ng-disabled="progressPointer != 2" ng-class="{'highlight-button': progressPointer == 2,'completed-game': progressPointer > 2 }" ng-click="currentGame = 2"></button>
+            <button class="map-tile btn " ng-disabled="progressPointer != 3" ng-class="{'highlight-button': progressPointer == 3,'completed-game': progressPointer > 3 }" ng-click="currentGame = 3"></button>
+            <button class="map-tile btn " ng-disabled="progressPointer != 4" ng-class="{'highlight-button': progressPointer == 4,'completed-game': progressPointer > 4 }" ng-click="currentGame = 4"></button>
+            <button class="map-tile btn " ng-disabled="progressPointer != 5" ng-class="{'highlight-button': progressPointer == 5,'completed-game': progressPointer > 5 }" ng-click="currentGame = 5"></button>
+            <button class="map-tile btn " ng-disabled="progressPointer != 6" ng-class="{'highlight-button': progressPointer == 6,'completed-game': progressPointer > 6 }" ng-click="currentGame = 6"></button>
+            <button class="map-tile btn " ng-disabled="progressPointer != 7" ng-class="{'highlight-button': progressPointer == 7,'completed-game': progressPointer > 7 }" ng-click="currentGame = 7"></button>
+            <button class="map-tile btn " ng-disabled="progressPointer != 8" ng-class="{'highlight-button': progressPointer == 8,'completed-game': progressPointer > 8 }" ng-click="currentGame = 8"></button>
+            <button class="map-tile btn " ng-disabled="progressPointer != 9" ng-class="{'highlight-button': progressPointer == 9,'completed-game': progressPointer > 9 }" ng-click="currentGame = 9"></button>
+
+            <img class="xspot-img" src="img/xspot.png" ng-hide="reachTreasure">
+            <a href="main.html"><img class="treasure-img" src="img/treasure.png" ng-class="{'reach-treasure' : reachTreasure}" ng-show="reachTreasure" ></a>
+            <!--<div class="treasure-img-bg" ng-class="{'reach-treasure' : reachTreasure}" ng-show="reachTreasure" ><a href="main.html"><img class="treasure-img" src="img/treasure.png" ng-class="{'reach-treasure' : reachTreasure}" ng-show="reachTreasure" ></a></div>-->
+            <img class="progress-img" ng-show="success" src="img/well_done.png">
+            <img class="mistake-img" ng-show="mistake" src="img/tryagain.gif">
+
+        </div>
+
+    </div>
+
+
+    <!--<div class="game-tile" ng-controller="flagCtrl" flag="greece"  ng-show="currentGame==0">-->
+        <!--<flag-game></flag-game>-->
+    <!--</div>-->
+
+    <div class="game-tile" ng-controller="additionCtrl"ng-show="currentGame==0">
+        <addition-game></addition-game>
+    </div>
+
+    <div class="game-tile" ng-controller="additionCtrl" firstnumber="1" secondnumber="2" ng-show="currentGame==1">
+        <addition-game></addition-game>
+    </div>
+
+    <div class="game-tile" ng-controller="flagCtrl" flag="netherlands"  ng-show="currentGame==2">
+    <flag-game></flag-game>
+    </div>
+
+    <!--<div class="game-tile" ng-controller="wordCtrl"  ng-show="currentGame==2">-->
+        <!--<word-game></word-game>-->
+    <!--</div>-->
+
+    <div class="game-tile" ng-controller="wordCtrl"  ng-show="currentGame==3">
+        <word-game></word-game>
+    </div>
+    <div class="game-tile" ng-controller="wordCtrl"  ng-show="currentGame==4">
+        <word-game></word-game>
+    </div>
+
+    <div class="game-tile" ng-controller="wordCtrl"  ng-show="currentGame==5">
+        <word-game></word-game>
+    </div>
+
+    <div class="game-tile" ng-controller="wordCtrl"  ng-show="currentGame==6">
+        <word-game></word-game>
+    </div>
+
+    <div class="game-tile" ng-controller="wordCtrl"  ng-show="currentGame==7">
+        <word-game></word-game>
+    </div>
+
+    <div class="game-tile" ng-controller="additionCtrl"  ng-show="currentGame==8">
+        <addition-game></addition-game>
+    </div>
+
+    <div class="game-tile" ng-controller="additionCtrl"  ng-show="currentGame==9">
+        <addition-game></addition-game>
+    </div>
+</div>
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular-animate.min.js"></script>-->
+
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+
+<script src="js/directives.js"></script>
+<script src="js/services.js"></script>
+<script src="js/TreasureGameApp.js"></script>
+
+</body>
+</html>
